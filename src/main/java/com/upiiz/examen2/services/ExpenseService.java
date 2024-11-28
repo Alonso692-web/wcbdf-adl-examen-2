@@ -1,17 +1,36 @@
 package com.upiiz.examen2.services;
 
 import com.upiiz.examen2.entities.Expense;
+import com.upiiz.examen2.repository.ExpenseRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
-public interface ExpenseService {
-    List<Expense> getAllExpenses();
+@Service
+public class ExpenseService {
 
-    Expense getExpenseById(Long id);
+    @Autowired
+    ExpenseRepository expenseRepository;
 
-    Expense createExpense(Expense expense);
+    public List<Expense> getAllExpenses() {
+        return expenseRepository.findAll();
+    }
 
-    Expense updateExpense(Long id, Expense expenseDetails);
+    public Optional<Expense> getExpenseById(Long id) {
+        return expenseRepository.findById(id);
+    }
 
-    void deleteExpense(Long id);
+    public Expense createExpense(Expense expense) {
+        return expenseRepository.save(expense);
+    }
+
+    public Expense updateExpense(Expense expense) {
+        return expenseRepository.save(expense);
+    }
+
+    public void deleteExpense(Long id) {
+        expenseRepository.deleteById(id);
+    }
 }
