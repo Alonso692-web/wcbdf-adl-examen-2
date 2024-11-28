@@ -78,7 +78,7 @@ public class SecurityConfig {
         UserDetails user = User.withUsername("user")
                 .password(passwordEncoder().encode("user1234"))
                 .roles("USER")
-                .authorities("READ", "CREATE")
+                .authorities("READ")
                 .build();
         UserDetails moderator = User.withUsername("moderator")
                 .password(passwordEncoder().encode("mode1234"))
