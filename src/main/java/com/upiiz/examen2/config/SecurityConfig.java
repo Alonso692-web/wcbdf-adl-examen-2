@@ -78,7 +78,7 @@ public class SecurityConfig {
         UserDetails user = User.withUsername("user")
                 .password(passwordEncoder().encode("user1234"))
                 .roles("USER")
-                .authorities("READ")
+                .authorities("READ", "CREATE")
                 .build();
         UserDetails moderator = User.withUsername("moderator")
                 .password(passwordEncoder().encode("mode1234"))
@@ -101,6 +101,6 @@ public class SecurityConfig {
                 .authorities("READ", "DELETE")
                 .build();
 
-        return new InMemoryUserDetailsManager(admin, moderator, editor, developer, analyst);
+        return new InMemoryUserDetailsManager(admin, user, moderator, editor, developer, analyst);
     }
 }

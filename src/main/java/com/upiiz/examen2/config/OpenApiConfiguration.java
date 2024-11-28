@@ -29,7 +29,7 @@ import org.springframework.context.annotation.Configuration;
                 ),
                 @Server(
                         description = "Servidor de Produccion",
-                        url = "https://adl-wcbdf-eje-11-expenses.onrender.com"
+                        url = "https://wcbdf-adl-examen-2.onrender.com"
                 )
         },
         tags = {
