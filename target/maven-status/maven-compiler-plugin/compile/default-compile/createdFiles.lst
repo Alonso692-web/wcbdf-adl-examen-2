@@ -1,0 +1,8 @@
+com\upiiz\examen2\responses\CustomResponse.class
+com\upiiz\examen2\Examen2Application.class
+com\upiiz\examen2\repository\ExpenseRepository.class
+com\upiiz\examen2\entities\Expense.class
+com\upiiz\examen2\config\SecurityConfig.class
+com\upiiz\examen2\controller\ExpenseController.class
+com\upiiz\examen2\config\OpenApiConfiguration.class
+com\upiiz\examen2\services\ExpenseService.class
